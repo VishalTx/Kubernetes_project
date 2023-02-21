@@ -21,6 +21,5 @@ jobs:
           command: |
             ssh -o StrictHostKeyChecking=no ubuntu@172.31.2.140 
             scp /var/lib/jenkins/workspace/test/* ubuntu@172.31.2.140:/home/ubuntu
-            ssh -o StrictHostKeyChecking=no ubuntu@172.31.2.140 touch /home/ubuntu/hghgh
-            
+            ssh -o StrictHostKeyChecking=no ubuntu@172.31.2.140 ls
 
