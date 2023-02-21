@@ -12,3 +12,13 @@ jobs:
       - run:
           name: Run tests
           command: yarn test
+    
+      - add_ssh_keys:
+          fingerprints:
+            - "ansible"
+      - run:
+          name: Deploy code to server
+          command: |
+            ssh -o StrictHostKeyChecking=no ubuntu@172.31.2.140 
+            scp /var/lib/jenkins/workspace/test/* ubuntu@172.31.2.140:/home/ubuntu
+
