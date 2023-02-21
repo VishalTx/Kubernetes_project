@@ -10,7 +10,6 @@ jobs:
     #       timeout: 30 
     #       from_host: '172.31.2.140'
     steps:
-      - checkout
       - add_ssh_keys:
           fingerprints:
             - "2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23"
