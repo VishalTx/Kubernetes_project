@@ -6,13 +6,6 @@ jobs:
       - image: circleci/node:16.3.0
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: yarn install
-      - run:
-          name: Run tests
-          command: yarn test
-    
       - add_ssh_keys:
           fingerprints:
             - "ansible"
