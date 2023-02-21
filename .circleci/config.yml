@@ -8,7 +8,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "ansible"
+            - "ubuntu"
       - run:
           name: Deploy code to server
           command: |
