@@ -4,7 +4,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:16.3.0
-      steps:
+    steps:
       - ssh-tunnel/setup:
           key_fingerprint: '2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23' 
           timeout: 30 
