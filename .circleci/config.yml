@@ -14,5 +14,5 @@ jobs:
 workflows:
   sample:
     jobs:
-      - deploy
+      - deploy 
             
