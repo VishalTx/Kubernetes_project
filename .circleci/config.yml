@@ -1,33 +1,23 @@
 version: 2.1
-executors:
-  my-custom-executor:
-    docker:
-      - image: cimg/base:stable
-        auth:
-          # ensure you have first added these secrets
-          # visit app.circleci.com/settings/project/github/VishalTx/Kubernetes_project/environment-variables
-          username: $DOCKER_HUB_USER
-          password: $DOCKER_HUB_PASSWORD
 jobs:
-  checkout:
-
-    executor: my-custom-executor
-    steps:
-      - checkout
-      - run: |
-          # echo Hello, World!
-          jobs:
-  example-job:
+  build-and-test:
     docker:
-      # replace with your preferred image
-      - image: cimg/base:stable
+      - image: cimg/openjdk:11.0
     steps:
-      - with-git-deploy-key/do:
-          ssh_key_fingerprint: '2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23' 
-          
-
-workflows:
-  my-custom-workflow:
-    jobs:
+      - add_ssh_keys:
+          fingerprints:
+            - "2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23"
       - checkout
-      
+      - run:
+          name: Deploy Over SSH
+          command: |
+            ssh -o StrictHostKeyChecking=no ubuntu@172.31.2.140
+            scp /var/lib/jenkins/workspace/test/* ubuntu@172.31.2.140:/home/ubuntu
+            ssh -o StrictHostKeyChecking=no ubuntu@172.31.2.140 touch /home/ubuntu/vishal
+workflows:
+  sample:
+    jobs:
+      - build-and-test
+
+
+ 
