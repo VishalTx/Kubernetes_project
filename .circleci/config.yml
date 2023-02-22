@@ -1,21 +1,22 @@
 version: 2.1
-
 jobs:
-  build:
+  build-and-test:
     docker:
-      - image: circleci/node:10
-
+      - image: ubuntu
     steps:
-      - checkout
-
-      # Install SSH client
       - run: sudo apt-get install -y ssh
-
-      # Add SSH key
-      - add_ssh_keys
-
-      # SSH into server and run command
+      - add_ssh_keys:
+          fingerprints:
+            - "2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23"
       - run:
-          name: Run Remote Command
-          command: ssh ubuntu@172.31.2.140 'touch /home/ubuntu/test.txt'
+          name: Deploy Over SSH
+          command:
+            ubuntu@172.31.2.140 'touch /home/ubuntu/test.txt'
+            
+            
+      
+workflows:
+  sample:
+    jobs:
+      - build-and-test
 
