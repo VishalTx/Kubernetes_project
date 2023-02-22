@@ -6,7 +6,9 @@ jobs:
     steps:
       - checkout
       - run: sudo apt-get install -y ssh
-      - add_ssh_keys
+      - add_ssh_keys:
+          fingerprints:
+            - "2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23"
       - run:
           name: Deploy Over SSH
           command: ssh -o StrictHostKeyChecking=no ubuntu@172.31.2.140
