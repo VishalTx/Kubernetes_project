@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build-and-test:
     docker:
-      - image: vishal700/hello-world
+      - image: ubuntu
     steps:
       - add_ssh_keys:
           fingerprints:
