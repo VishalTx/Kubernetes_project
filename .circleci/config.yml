@@ -11,9 +11,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command:
-            touch vishal.txt
-            pwd
-            ls
+            touch home/ubuntu/vishal.txt
       
 workflows:
   sample:
