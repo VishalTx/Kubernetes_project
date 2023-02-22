@@ -14,7 +14,7 @@ jobs:
             touch vishal.txt
             pwd
             ls
-      - checkout
+      
 workflows:
   sample:
     jobs:
