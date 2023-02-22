@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command:
-            ubuntu@172.31.2.140 'touch /home/ubuntu/test.txt'
+            ssh ubuntu@172.31.2.140 'touch /home/ubuntu/test.txt'
             
             
       
