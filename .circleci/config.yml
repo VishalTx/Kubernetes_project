@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build-and-test:
     docker:
-      - image: cimg/openjdk:11.0
+      - image: vishal700/hello-world
     steps:
       - add_ssh_keys:
           fingerprints:
