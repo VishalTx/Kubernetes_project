@@ -23,7 +23,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - with-git-deploy-key/do:
-          ssh_key_fingerprint: '	2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23' 
+          ssh_key_fingerprint: '2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23' 
           
 
 workflows:
