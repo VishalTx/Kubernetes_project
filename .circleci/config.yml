@@ -1,22 +1,18 @@
 version: 2.1
+
 jobs:
-  build-and-test:
-    docker:
-      - image: circleci/node:10
+  deploy:
+    machine: true
     steps:
       - checkout
-      - run: sudo apt-get install -y ssh
       - add_ssh_keys:
           fingerprints:
             - "2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23"
       - run:
-          name: Deploy Over SSHh
+          name: Deploy code
           command: ssh -o StrictHostKeyChecking=no ubuntu@172.31.2.140
-            
-            
-      
 workflows:
   sample:
     jobs:
-      - build-and-test
-
+      - deploy
+            
