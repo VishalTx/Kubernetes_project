@@ -11,7 +11,8 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            touch vishal.txt
+            pwd
+            ipconfig
             ls
 workflows:
   sample:
