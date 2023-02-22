@@ -10,7 +10,7 @@ jobs:
             - "2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23"
       - run:
           name: Deploy code
-          command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 cd /home/ubuntu/
+          command: 
                    ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155:/home/ubuntu/ ls
             
 
