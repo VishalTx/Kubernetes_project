@@ -8,14 +8,13 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23"
-      - checkout
       - run:
           name: Deploy Over SSH
           command:
             touch vishal.txt
-
             pwd
             ls
+      - checkout
 workflows:
   sample:
     jobs:
