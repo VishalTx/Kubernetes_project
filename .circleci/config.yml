@@ -2,8 +2,9 @@ version: 2.1
 jobs:
   build-and-test:
     docker:
-      - image: ubuntu
+      - image: circleci/node:10
     steps:
+      - checkout
       - run: sudo apt-get install -y ssh
       - add_ssh_keys:
           fingerprints:
