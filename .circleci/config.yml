@@ -12,7 +12,10 @@ jobs:
           name: Deploy code
           command: 
 
-            ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 touch home/ubuntu/text.txt
+            ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155
+            ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 cd home/ubuntu/
+            ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 ls
+
             
               
 workflows:
