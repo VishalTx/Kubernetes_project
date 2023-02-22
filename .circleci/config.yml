@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Deploy code
           command: 
-                   ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155:/home/ubuntu/ ls
+                  ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155:/home/ubuntu/ ls
             
 
             
