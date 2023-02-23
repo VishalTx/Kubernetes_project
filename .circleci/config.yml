@@ -20,6 +20,9 @@ jobs:
 
           name: Docker Image Tagging
           command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker image tag test:${CIRCLE_BUILD_NUM} vishal7500/test:Latest
+      - run: 
+          name: Docker Image Push
+          command: ssh ubuntu@184.169.212.155 'docker login --username my-dockerhub-username --password $DOCKERHUB_PASSWORD'
     
 workflows:
   sample:
