@@ -12,7 +12,7 @@ jobs:
             - "2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23"
       - run:
           name: Deploy code
-          command: ls; pwd;
+          command: rsync Dockerfile ssh -o StrictHostKeyChecking=no ubuntu@172.31.2.140 fvf.txt 
     
                      
 workflows:
