@@ -11,7 +11,7 @@ jobs:
           fingerprints:
             - "2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23"
       - run:
-          name: Deploy code
+          name: Sending Dockerfile To Ansible Server
           command: rsync -ravz --delete /home/circleci/project/* ubuntu@184.169.212.155:.  
     
                      
