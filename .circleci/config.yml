@@ -20,11 +20,13 @@ jobs:
 
           name: Docker Image Tagging
           command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker image tag test:${CIRCLE_BUILD_NUM} vishal7500/test:${CIRCLE_BUILD_NUM};
-                  ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker image tag test:${CIRCLE_BUILD_NUM} vishal7500/test:Latest;
+                  ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker image tag test:${CIRCLE_BUILD_NUM} vishal7500/test:latest;
       - run: 
           name: Docker Image Push
           command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker login --username vishal7500 --password $DOCKERHUB_PASSWORD ;
                     ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker push vishal7500/test:${CIRCLE_BUILD_NUM};
+                    ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker push vishal7500/test:latest;
+                    
     
 workflows:
   sample:
