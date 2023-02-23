@@ -16,6 +16,10 @@ jobs:
       - run:
           name: Build Dokcer Image
           command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker build -t test:${CIRCLE_BUILD_NUM} .
+      - run:
+
+          name: Docker Image Tagging
+          command: ssh -o StrictHostKeyChecking=no ubuntu@172.31.2.140 docker image tag test:${CIRCLE_BUILD_NUM} vishal7500/test:Latest
     
 workflows:
   sample:
