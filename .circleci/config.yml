@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+  build-and-test:
+    docker:
+      - image: ubuntu
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23"
+      - checkout
+      - run:
+          name: Deploy Over SSH
+          command: |
+            pwd
+            ls
+workflows:
+  sample:
+    jobs:
+      - build-and-test
+
+
+ 
