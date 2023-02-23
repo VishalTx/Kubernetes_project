@@ -15,7 +15,7 @@ jobs:
           command: rsync -ravz --delete /home/circleci/project/* ubuntu@184.169.212.155:.
       - run:
           name: Build Dokcer Image
-          command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker build -t $JOB_NAME:$BUILD_ID .
+          command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker build -t test:${CIRCLE_BUILD_NUM} .
     
                      
 workflows:
