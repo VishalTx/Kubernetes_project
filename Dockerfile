@@ -1,32 +1,32 @@
-# FROM  centos:latest
+FROM  centos:latest
 
-# RUN cd /etc/yum.repos.d/
-# RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
-# RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+RUN cd /etc/yum.repos.d/
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 
 
-# RUN yum install -y httpd \
-# zip \
-# unzip
-# ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
-# WORKDIR /var/www/html/
-# RUN unzip photogenic.zip
-# RUN cp -rvf photogenic/* .
-# RUN rm -rf photogenic photogenic.zip
-# CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-# EXPOSE 9090 
-
-FROM  ubuntu:latest
-
-RUN apt-get update && apt-get install unzip && apt-get install nginx -y
-
+RUN yum install -y httpd \
+zip \
+unzip
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
 WORKDIR /var/www/html/
 RUN unzip photogenic.zip
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
-# CMD ["/usr/sbin/nginx", "-D", "FOREGROUND"]
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+EXPOSE 9090 
+
+# FROM  ubuntu:latest
+
+# RUN apt-get update && apt-get install unzip && apt-get install nginx -y
+
+# ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
+# WORKDIR /var/www/html/
+# RUN unzip photogenic.zip
+# RUN cp -rvf photogenic/* .
+# RUN rm -rf photogenic photogenic.zip
+# # CMD ["/usr/sbin/nginx", "-D", "FOREGROUND"]
+# CMD ["nginx", "-g", "daemon off;"]
 
 
 
