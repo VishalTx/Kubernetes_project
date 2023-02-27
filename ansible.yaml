@@ -2,8 +2,8 @@
   become: true
   tasks: 
      - name: delete old deployment
-       command: ls;
-                pwd;
+       command: pwd
+            
     #  - name: delete old service
     #    command: kubectl delete -f service.yaml
     #  - name: create new deployment
