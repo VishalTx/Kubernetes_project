@@ -29,7 +29,7 @@ jobs:
                     ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker rmi  -f vishal7500/test:latest  vishal7500/test:${CIRCLE_BUILD_NUM};
       - run:
           name: Copy Files form ansible to Kubernetes Server
-          command: rsync -ravz --delete /home/circleci/project/* ubuntu@54.183.89.94:.
+          command: rsync -ravz --delete /home/circleci/project/* ubuntu@13.57.219.200:.
 
       - run:
           name: Kubernetes Deployment Using Ansible Server
