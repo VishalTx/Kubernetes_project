@@ -19,13 +19,14 @@
 FROM  ubuntu:latest
 
 RUN apt-get update && apt-get install unzip && apt-get install nginx -y
+COPY nginx.conf /etc/nginx/nginx.conf
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
 WORKDIR /var/www/html/
 RUN unzip photogenic.zip
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
-CMD ["/usr/sbin/nginx", "-D", "FOREGROUND"]
-
+# CMD ["/usr/sbin/nginx", "-D", "FOREGROUND"]
+CMD ["nginx", "-g", "daemon off;"]
 
 
 
