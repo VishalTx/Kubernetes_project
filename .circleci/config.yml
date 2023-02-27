@@ -33,7 +33,7 @@ jobs:
 
       - run:
           name: Kubernetes Deployment Using Ansible Server
-          command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 ansible-playbook ansible.yaml           
+          command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 ansible-playbook ansible.yaml     
     
 workflows:
   sample:
