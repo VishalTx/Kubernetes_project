@@ -26,9 +26,14 @@ jobs:
           command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker login --username vishal7500 --password $DOCKERHUB_PASSWORD ;
                     ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker push vishal7500/test:${CIRCLE_BUILD_NUM};
                     ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker push vishal7500/test:latest;
+                    ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 docker rmi  -f vishal7500/test:latest vishal7500/test:${CIRCLE_BUILD_NUM};
       - run:
           name: Copy Files form ansible to Kubernetes Server
-          command: rsync -ravz --delete /home/circleci/project/* ubuntu@54.183.89.94:.           
+          command: rsync -ravz --delete /home/circleci/project/* ubuntu@54.183.89.94:.
+
+      - run:
+          name: Kubernetes Deployment Using Ansible Server
+          command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 sudo ansible-playbook ansible.yaml     
     
 workflows:
   sample:
