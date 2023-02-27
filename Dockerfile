@@ -18,7 +18,7 @@
 
 FROM  ubuntu:latest
 
-RUN apt-get update && apt-get install unzip
+RUN apt-get update && apt-get install unzip && apt-get install nginx
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
 WORKDIR /var/www/html/
 RUN unzip photogenic.zip
