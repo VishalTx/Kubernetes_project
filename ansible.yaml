@@ -2,7 +2,7 @@
   become: true
   tasks: 
      - name: delete old deployment
-       command: pwd
+       command: touch v.txt
             
     #  - name: delete old service
     #    command: kubectl delete -f service.yaml
