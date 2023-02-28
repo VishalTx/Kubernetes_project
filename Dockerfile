@@ -35,7 +35,7 @@
 #  CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 #  EXPOSE 80
 
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
 RUN apt-get update && \
     apt-get install -y apache2 \
