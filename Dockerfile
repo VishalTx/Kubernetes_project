@@ -18,7 +18,7 @@
 # CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 # EXPOSE 9090
 
-FROM centos:latest
+FROM centos:7
 
 # Update packages and install unzip
 RUN yum -y update && yum -y install unzip
