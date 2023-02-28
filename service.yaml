@@ -6,8 +6,8 @@ metadata:
     app: webapp
 spec:
   ports:
-    - port: 9090                               
-      targetPort: 9090                    
+    - port: 8080                             
+      targetPort: 80                    
       nodePort: 31200
   selector:
     app: webapp                    
