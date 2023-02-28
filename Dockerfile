@@ -25,7 +25,7 @@ RUN yum -y update && yum -y install unzip
 
 # Download and extract the zip file to /var/www/html
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /tmp/photogenic.zip
-RUN unzip -q /tmp/photogenic.zip -d /var/www/html 
+RUN unzip -q /tmp/photogenic.zip 
 RUN rm /tmp/photogenic.zip
 
 # Set the working directory
