@@ -1,4 +1,4 @@
-FROM  centos:latest
+FROM  centos:7
 RUN yum install -y httpd \
 zip \
 unzip
@@ -10,17 +10,6 @@ RUN rm -rf photogenic photogenic.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 9090 
 
-# FROM  ubuntu:latest
-
-# RUN apt-get update && apt-get install unzip && apt-get install nginx -y
-
-# ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
-# WORKDIR /var/www/html/
-# RUN unzip photogenic.zip
-# RUN cp -rvf photogenic/* .
-# RUN rm -rf photogenic photogenic.zip
-# # CMD ["/usr/sbin/nginx", "-D", "FOREGROUND"]
-# CMD ["nginx", "-g", "daemon off;"]
 
 
 
