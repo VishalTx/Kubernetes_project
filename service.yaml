@@ -11,4 +11,4 @@ spec:
                          
   selector:
     app: webapp                    
-  type: Loadbalancer
+  type: LoadBalancer
