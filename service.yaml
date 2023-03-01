@@ -11,4 +11,4 @@ spec:
                          
   selector:
     app: webapp                    
-  type: NodePort
+  type: Loadbalancer
