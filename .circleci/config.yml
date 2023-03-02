@@ -40,6 +40,9 @@ orbs:
 workflows:
   sample:
     jobs:
-      - deploy
+      - deploy:
+          post-steps:
+              - jira/notify
+
       
             
