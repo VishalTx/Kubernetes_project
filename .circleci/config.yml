@@ -31,9 +31,11 @@ jobs:
           name: Copy Files form ansible to Kubernetes Server
           command: rsync -ravz --delete /home/circleci/project/* ubuntu@13.57.219.200:.
 
-      - run:
-          name: Kubernetes Deployment Using Ansible Server
-          command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 sudo ansible-playbook ansible.yaml     
+      # - run:
+      #     name: Kubernetes Deployment Using Ansible Server
+      #     command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 sudo ansible-playbook ansible.yaml
+orbs:
+  jira: circleci/jira@1.3.1   
     
 workflows:
   sample:
