@@ -7,8 +7,7 @@ jobs:
     steps:
       
       - checkout
-      - ms-teams-notifier/report:
-          webhook_url: https://txplin.webhook.office.com/webhookb2/a5c71dc8-f8c8-4bf6-ad63-f0af1da64f6f@d7e861c9-d924-4413-86db-05780e928657/IncomingWebhook/4976a1665a8b455d80efb692068ab0c2/3a488709-b1e3-423b-8b68-6d9e403099b1
+      
       - add_ssh_keys:
           fingerprints:
             - "2d:4a:02:c1:28:6b:7d:7f:48:a3:5a:df:3b:1d:50:23"
@@ -32,7 +31,8 @@ jobs:
       - run:
           name: Copy Files form ansible to Kubernetes Server
           command: rsync -ravz --delete /home/circleci/project/* ubuntu@13.57.219.200:.
-    
+      - ms-teams-notifier/report:
+          webhook_url: https://txplin.webhook.office.com/webhookb2/a5c71dc8-f8c8-4bf6-ad63-f0af1da64f6f@d7e861c9-d924-4413-86db-05780e928657/IncomingWebhook/4976a1665a8b455d80efb692068ab0c2/3a488709-b1e3-423b-8b68-6d9e403099b1
           
           #     command: ssh -o StrictHostKeyChecking=no ubuntu@184.169.212.155 sudo ansible-playbook ansible.yaml
       # - run:
