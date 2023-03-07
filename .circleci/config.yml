@@ -3,7 +3,6 @@ jobs:
   deploy:
     machine: true
     steps:
-      
       - checkout
       
       - add_ssh_keys:
